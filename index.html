@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abesheak Vengadessane – Security &amp; Corporate Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06090F;--panel:#0D131D;--ink:#E9F1FA;--muted:#8CA0B8;--line:#1E2B3D;--a:#00E5FF;--b:#FFB000;--ai:#041016;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F7FB;--panel:#FFFFFF;--ink:#0A1220;--muted:#46566E;--line:#C5D0E0;--a:#0047FF;--b:#B25E00;--ai:#FFFFFF}}
+:root[data-theme="light"]{--bg:#F4F7FB;--panel:#FFFFFF;--ink:#0A1220;--muted:#46566E;--line:#C5D0E0;--a:#0047FF;--b:#B25E00;--ai:#FFFFFF}
+html{scroll-padding-top:4.5rem;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.95rem;line-height:1.7;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.9;z-index:-1}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+button{font:inherit;cursor:pointer}
+.wrap{max-width:66rem;margin:0 auto;padding:0 1.5rem}
+#boot{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-content:center;gap:.8rem;text-align:left;transition:opacity .4s}
+#boot.off{opacity:0;pointer-events:none}
+#boot b{color:var(--a);font-size:2.5rem;font-family:"Space Grotesk",sans-serif}
+#bar{height:3px;background:var(--line);width:16rem}#bar i{display:block;height:100%;width:0;background:var(--a)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--a)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.7rem;padding-bottom:.7rem}
+.brand{text-decoration:none;font-weight:700;color:var(--a)}
+nav{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.85rem}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--a)}
+.tog{border:1px solid var(--a);background:transparent;color:var(--a);padding:.2rem .7rem;font-size:.8rem}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;padding:3.5rem 0}
+.st{color:var(--b);font-size:.85rem;margin:0 0 1rem}
+.st::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--b);margin-right:.5rem;animation:p 1.4s infinite}
+@keyframes p{50%{opacity:.2}}
+h1{font-weight:700;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1;letter-spacing:-.03em}
+.type{font-size:1.15rem;margin:1.2rem 0;min-height:2em;color:var(--a)}
+.type::after{content:"▌";animation:p 1s infinite}
+.lead{color:var(--muted);max-width:34rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.7rem 1.2rem;border:2px solid var(--a);color:var(--a)}
+.btn.p{background:var(--a);color:var(--ai)}
+.btn:hover{box-shadow:0 0 0 3px var(--b)}
+#globe{width:100%;aspect-ratio:1;max-width:30rem;justify-self:center;cursor:grab;touch-action:pan-y}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:1rem}
+.stats div{background:var(--panel);padding:1rem}
+.stats b{display:block;font-family:"Space Grotesk",sans-serif;font-size:2rem;color:var(--a)}
+.stats span{color:var(--muted);font-size:.8rem}
+section{padding:3.2rem 0}
+h2{font-size:1.8rem;margin-bottom:1.5rem}
+h2::before{content:"> ";color:var(--b)}
+h3{font-size:1.15rem}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem}
+.card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--a);padding:1.2rem}
+.card dt{color:var(--muted);font-size:.8rem}.card dd{margin:0 0 .8rem}.card dd:last-child{margin:0}
+.job{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--b);padding:1.2rem;margin-bottom:1rem}
+.job .m{color:var(--muted);font-size:.85rem;margin:.2rem 0 .6rem}
+.job ul{margin:0;padding-left:1.1rem}.job li{margin-bottom:.3rem}
+.fl{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.fl button{background:transparent;border:1px solid var(--line);color:var(--ink);padding:.25rem .9rem}
+.fl button[aria-pressed="true"]{background:var(--a);color:var(--ai);border-color:var(--a)}
+.grp h3{margin:1rem 0 .5rem;font-size:.9rem;color:var(--b)}.grp[hidden]{display:none}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.chips li{border:1px solid var(--a);background:var(--panel);padding:.1rem .7rem;font-size:.85rem;transition:background .2s,color .2s}
+.chips li:hover{background:var(--a);color:var(--ai)}
+.pj{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pj article{background:var(--panel);border:1px solid var(--line);padding:1.3rem;transition:transform .2s,border-color .2s}
+.pj article:hover{transform:translateY(-4px);border-color:var(--a)}
+.pj p{color:var(--muted);margin:.6rem 0 0}
+.m{color:var(--muted)}
+.act{padding-left:1.1rem;margin:0}.act li{margin-bottom:.7rem}
+form{display:grid;gap:1rem;max-width:30rem}
+label{display:grid;gap:.3rem;font-size:.85rem;color:var(--muted)}
+input,select,textarea{font:inherit;padding:.6rem;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+.cl{list-style:none;padding:0;margin:1.5rem 0 0}.cl span{display:inline-block;min-width:6rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 3rem;color:var(--muted);font-size:.85rem}
+.tk{display:flex;align-items:stretch;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:calc(env(safe-area-inset-top,0px) + 3.1rem);z-index:4;overflow:hidden}
+.tk b{flex:none;background:var(--b);color:var(--ai);padding:.35rem .9rem;font-size:.8rem;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
+.tk b::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--ai);animation:p 1s infinite}
+.tkv{overflow:hidden;flex:1}
+.tkt{display:inline-flex;white-space:nowrap;padding:.35rem 0;animation:tk 60s linear infinite}
+.tkv:hover .tkt{animation-play-state:paused}
+.tkt span{padding:0 2.2rem;font-size:.85rem;color:var(--ink)}
+.tkt span::before{content:"◆";color:var(--a);margin-right:.7rem}
+.tkt em{font-style:normal;color:var(--b)}
+@keyframes tk{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tk b::before{animation:none}.tkv{overflow-x:auto}.tkt{animation:none}}
+@media (max-width:760px){.hero,.two,.pj{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.st::before,.type::after{animation:none}#boot{display:none}}
+</style>
+</head>
+<body>
+<div id="boot" aria-hidden="true"><b id="pc">0%</b><div id="bar"><i></i></div><span class="m">SECURE · TLS 1.3 · ENCRYPTED</span></div>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">abesheak@intel:~$</a>
+  <nav aria-label="Main"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#research">Research</a><a href="#contact">Contact</a></nav>
+  <button class="tog" id="theme" type="button" aria-label="Toggle light or dark theme">Light mode</button>
+</div></header>
+<div class="tk" role="region" aria-label="Latest updates">
+  <b>LIVE UPDATES</b>
+  <div class="tkv"><div class="tkt" id="tkt">
+    <span><em>Sep 2026</em> Started PG Diploma in Security and Corporate Intelligence Management at Rashtriya Raksha University</span>
+    <span><em>9 Oct 2026</em> Attended the OSAC Chennai Chapter Meeting, Q3 2026</span>
+    <span><em>Apr 2026</em> Completed B.Sc. Forensic Science at KARE</span>
+    <span><em>Research</em> Co-researcher on a study of PSARA, 2005 and corporate private security in India</span>
+    <span><em>CTF</em> Completed OSINT Industries investigations, including an INTERPOL Red Notice address trace</span>
+    <span><em>Dec 2025</em> Observed proceedings across 15 courts in Puducherry</span>
+    <span><em>Open to work</em> Internships and entry-level roles in security, intelligence and digital forensics</span>
+  </div></div>
+</div>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <p class="st">Puducherry · Open to internships and entry-level roles</p>
+      <h1>Abesheak Vengadessane</h1>
+      <p class="type" id="type" aria-live="off"></p>
+      <p class="lead">I research, verify and document. My background is forensic science, criminology and OSINT, and I’m training in security and corporate intelligence at Rashtriya Raksha University.</p>
+      <div class="btns">
+        <a class="btn p" href="https://wa.me/919025595677?text=Hi%20Abesheak%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">Message on WhatsApp</a>
+        <a class="btn" href="mailto:abesheak86@gmail.com">Email me</a>
+      </div>
+    </div>
+    <canvas id="globe" width="600" height="600" role="img" aria-label="Rotating dotted globe with a marker on Puducherry. Drag to rotate."></canvas>
+  </div>
+
+  <div class="stats rv">
+    <div><b data-n="15">0</b><span>courts observed</span></div>
+    <div><b data-n="3">0</b><span>internships and placements</span></div>
+    <div><b data-n="6">0</b><span>forensic and security tools</span></div>
+    <div><b data-n="3">0</b><span>research and CTF activities</span></div>
+  </div>
+
+  <section id="about" class="rv">
+    <h2>About</h2>
+    <div class="two">
+      <div>
+        <p>I’m a Forensic Science graduate with a background in criminology, criminal law, psychology, forensic investigation and police science. I’m pursuing a PG Diploma in Security and Corporate Intelligence Management (SCIM) at Rashtriya Raksha University, Puducherry.</p>
+        <p>I’ve observed courts, interned at a police station and in cybersecurity and digital forensics, and built OSINT skills through CTF challenges covering geolocation, identity correlation, domain and WHOIS research, and corporate records.</p>
+        <p>I’m interested in corporate security, security intelligence, child protection and crime prevention.</p>
+      </div>
+      <dl class="card">
+        <dt>Currently</dt><dd>PG Diploma, Security and Corporate Intelligence Management, RRU</dd>
+        <dt>Degree</dt><dd>B.Sc. Forensic Science, KARE (2026)</dd>
+        <dt>Looking for</dt><dd>Roles in security, intelligence, digital forensics and investigation</dd>
+        <dt>Location</dt><dd>Puducherry, India</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="experience" class="rv">
+    <h2>Experience</h2>
+    <div class="job"><h3>Court Proceedings Observer</h3><p class="m">Judicial Department, Puducherry · Dec 2025 – Jan 2026</p>
+      <ul><li>Observed proceedings across 15 courts in Puducherry and saw how cases move through the justice system.</li><li>Observed the Fast Track Court for the POCSO Act and the Mahila Court, with direct exposure to child protection and women’s safety matters.</li><li>Built an understanding of how law, criminal justice, victims and judicial processes connect.</li></ul></div>
+    <div class="job"><h3>Cyber Security &amp; Forensics Intern</h3><p class="m">Texial Cyber Security, Bengaluru · Jun 2025 – Jul 2025</p>
+      <ul><li>Gained practical exposure to cybersecurity and digital forensics workflows.</li><li>Assisted with security testing, digital evidence examination and forensic analysis.</li><li>Worked with Kali Linux, Nmap, Autopsy, FTK Imager and OWASP ZAP.</li></ul></div>
+    <div class="job"><h3>Forensic Science Intern</h3><p class="m">Villianur Police Station, Puducherry · Jun 2024 – Jul 2024</p>
+      <ul><li>Gained practical exposure to police station operations and the investigation process.</li></ul></div>
+  </section>
+
+  <section id="skills" class="rv">
+    <h2>Skills</h2>
+    <div class="fl" role="group" aria-label="Filter skills">
+      <button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="osint" aria-pressed="false">OSINT</button><button type="button" data-f="for" aria-pressed="false">Forensics</button><button type="button" data-f="res" aria-pressed="false">Research</button><button type="button" data-f="tools" aria-pressed="false">Tools</button>
+    </div>
+    <div class="grp" data-g="osint"><h3>OSINT</h3><ul class="chips"><li>Geolocation</li><li>Identity correlation</li><li>Domain and WHOIS research</li><li>Corporate records research</li><li>Google search operators</li><li>Historical dataset review</li><li>Source verification</li></ul></div>
+    <div class="grp" data-g="for"><h3>Forensics &amp; investigation</h3><ul class="chips"><li>Forensic investigation</li><li>Digital evidence examination</li><li>Security testing</li><li>Criminology</li><li>Criminal law</li><li>Police science</li></ul></div>
+    <div class="grp" data-g="res"><h3>Research &amp; documentation</h3><ul class="chips"><li>Research and information analysis</li><li>Legal and criminological research</li><li>Documentation and report writing</li><li>Proofreading and content development</li></ul></div>
+    <div class="grp" data-g="tools"><h3>Tools</h3><ul class="chips"><li>Kali Linux</li><li>Nmap</li><li>Autopsy</li><li>FTK Imager</li><li>OWASP ZAP</li><li>Python</li></ul></div>
+  </section>
+
+  <section id="projects" class="rv">
+    <h2>Projects</h2>
+    <div class="pj">
+      <article><h3>IP Infringement Detection System</h3><p>A Python command-line system that flags potential intellectual property infringements. AI models in the backend handle content similarity analysis and pattern recognition, and it generates structured reports on possible violations.</p></article>
+      <article><h3>Paper-Based Alcohol Sensor</h3><p>A low-cost disposable electrochemical sensor with pencil-drawn electrodes and immobilized Alcohol Oxidase enzyme. I built a portable reader with an MCP6002 op-amp, ADS1115 ADC and a microcontroller, and evaluated sensitivity, detection limit, response time, stability and accuracy.</p></article>
+    </div>
+  </section>
+
+  <section id="education" class="rv">
+    <h2>Education</h2>
+    <div class="job"><h3>PG Diploma, Security and Corporate Intelligence Management</h3><p class="m">Rashtriya Raksha University, Puducherry · Sep 2026 – Present</p></div>
+    <div class="job"><h3>B.Sc. Forensic Science</h3><p class="m">Kalasalingam Academy of Research and Education (KARE), Coimbatore · Aug 2023 – Apr 2026</p></div>
+  </section>
+
+  <section id="research" class="rv">
+    <h2>Research &amp; activities</h2>
+    <ul class="act">
+      <li>Co-researcher on “Beyond Licensing: Evaluating the Effectiveness of PSARA, 2005, in Regulating Corporate Private Security in India” (RRU, Puducherry).</li>
+      <li>Completed multiple OSINT Industries CTF investigations, including an INTERPOL Red Notice address trace and identity and social network correlation challenges.</li>
+      <li>Attended the OSAC Chennai Chapter Meeting, Q3 2026 (9 October 2026).</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="rv">
+    <h2>Let’s talk.</h2>
+    <p>The fastest way to reach me is WhatsApp. Fill this in and the chat opens with your message ready.</p>
+    <form id="wa">
+      <label>Your name<input id="n" required autocomplete="name"></label>
+      <label>Reason for contacting<select id="r"><option>Internship opportunity</option><option>Entry-level role</option><option>Research collaboration</option><option>Just connecting</option><option>Something else</option></select></label>
+      <label>A few details (optional)<textarea id="d" rows="3" maxlength="240"></textarea></label>
+      <button class="btn p" type="submit">Continue to WhatsApp</button>
+    </form>
+    <ul class="cl"><li><span>Phone</span><a href="https://wa.me/919025595677">+91 90255 95677</a></li><li><span>Email</span><a href="mailto:abesheak86@gmail.com">abesheak86@gmail.com</a></li><li><span>Location</span>Puducherry, India</li></ul>
+  </section>
+  <footer>© 2026 Abesheak Vengadessane</footer>
+</main>
+
+<script>
+(function(){
+var R=window.matchMedia('(prefers-reduced-motion: reduce)').matches,root=document.documentElement;
+function cv(n){return getComputedStyle(root).getPropertyValue(n).trim()}
+/* ticker: duplicate items for a seamless loop */
+var tt=document.getElementById('tkt');
+if(!R){tt.innerHTML+=tt.innerHTML;tt.querySelectorAll('span').forEach(function(s,i,a){if(i>=a.length/2)s.setAttribute('aria-hidden','true')})}
+/* theme */
+var tb=document.getElementById('theme');
+function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':!window.matchMedia('(prefers-color-scheme: light)').matches}
+function lab(){tb.textContent=isDark()?'Light mode':'Dark mode'}
+tb.onclick=function(){root.setAttribute('data-theme',isDark()?'light':'dark');lab()};lab();
+/* boot loader */
+var boot=document.getElementById('boot');
+if(!R){var p=0,pc=document.getElementById('pc'),bar=document.querySelector('#bar i');
+var t=setInterval(function(){p+=4+Math.random()*8;if(p>=100){p=100;clearInterval(t);setTimeout(function(){boot.classList.add('off')},200)}pc.textContent=Math.floor(p)+'%';bar.style.width=p+'%'},60)}
+else boot.style.display='none';
+/* typing */
+var roles=['Forensic Science Graduate','Security &amp; Corporate Intelligence','Digital Forensics','OSINT Investigator'].map(function(s){return s.replace('&amp;','&')});
+var el=document.getElementById('type'),ri=0,ci=0,del=false;
+function tick(){var w=roles[ri];el.textContent=w.slice(0,ci);
+ if(!del&&ci<w.length){ci++;setTimeout(tick,70)}else if(!del){del=true;setTimeout(tick,1400)}
+ else if(ci>0){ci--;setTimeout(tick,35)}else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,250)}}
+if(R){el.textContent=roles[0]}else tick();
+/* reveal + counters */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);
+ e.target.querySelectorAll('[data-n]').forEach(function(b){var n=+b.dataset.n,i=0;if(R){b.textContent=n;return}var c=setInterval(function(){i++;b.textContent=i;if(i>=n)clearInterval(c)},120)})})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(x){io.observe(x)});
+/* skill filter */
+var fb=document.querySelectorAll('.fl button'),gs=document.querySelectorAll('.grp');
+fb.forEach(function(b){b.onclick=function(){fb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});gs.forEach(function(g){g.hidden=!(b.dataset.f==='all'||g.dataset.g===b.dataset.f)})}});
+/* whatsapp */
+document.getElementById('wa').onsubmit=function(e){e.preventDefault();
+ var m='Hi Abesheak, I’m '+document.getElementById('n').value.trim()+'. I’m reaching out about: '+document.getElementById('r').value+'.',d=document.getElementById('d').value.trim();if(d)m+=' '+d;
+ window.open('https://wa.me/919025595677?text='+encodeURIComponent(m),'_blank','noopener')};
+/* globe */
+var cvs=document.getElementById('globe'),g=cvs.getContext('2d'),W=600,N=900,pts=[],i;
+for(i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),th=i*2.399963;pts.push([Math.cos(th)*r,y,Math.sin(th)*r])}
+var lat=11.93*Math.PI/180,lon=79.83*Math.PI/180,mk=[Math.cos(lat)*Math.sin(lon),Math.sin(lat),Math.cos(lat)*Math.cos(lon)];
+var ang=-lon+.3,tilt=.35,drag=false,lx=0,ph=0;
+var tgt=[];for(i=0;i<7;i++){var la=(Math.random()-.5)*2,lo=Math.random()*6.28;tgt.push([Math.cos(la)*Math.sin(lo),Math.sin(la),Math.cos(la)*Math.cos(lo)])}
+function rot(v){var c=Math.cos(ang),s=Math.sin(ang),x=v[0]*c+v[2]*s,z=-v[0]*s+v[2]*c,ct=Math.cos(tilt),st=Math.sin(tilt),y2=v[1]*ct-z*st,z2=v[1]*st+z*ct;return[x,y2,z2]}
+function draw(){var a=cv('--a'),b=cv('--b'),R0=W*.4,C=W/2;g.clearRect(0,0,W,W);
+ g.strokeStyle=a;g.globalAlpha=.25;g.beginPath();g.arc(C,C,R0,0,6.29);g.stroke();
+ for(var k=0;k<N;k++){var q=rot(pts[k]);if(q[2]<-.1)continue;g.globalAlpha=.2+.7*Math.max(q[2],0);g.fillStyle=a;g.fillRect(C+q[0]*R0,C-q[1]*R0,2.2,2.2)}
+ var m=rot(mk);if(m[2]>0){g.globalAlpha=.6;g.strokeStyle=b;g.lineWidth=1.5;
+  tgt.forEach(function(t){var u=rot(t);if(u[2]>0){g.beginPath();g.moveTo(C+m[0]*R0,C-m[1]*R0);g.quadraticCurveTo(C+(m[0]+u[0])*R0*.7,C-(m[1]+u[1])*R0*.7-30,C+u[0]*R0,C-u[1]*R0);g.stroke()}});
+  var rr=6+(ph%40)/2;g.globalAlpha=1-(ph%40)/40;g.beginPath();g.arc(C+m[0]*R0,C-m[1]*R0,rr,0,6.29);g.stroke();
+  g.globalAlpha=1;g.fillStyle=b;g.beginPath();g.arc(C+m[0]*R0,C-m[1]*R0,5,0,6.29);g.fill();g.font='20px JetBrains Mono,monospace';g.fillText('Puducherry',C+m[0]*R0+12,C-m[1]*R0-10)}
+ g.globalAlpha=1;g.lineWidth=1}
+function loop(){if(!drag)ang+=.004;ph++;draw();requestAnimationFrame(loop)}
+function px(e){return(e.touches?e.touches[0].clientX:e.clientX)}
+cvs.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;cvs.setPointerCapture(e.pointerId);cvs.style.cursor='grabbing'});
+cvs.addEventListener('pointermove',function(e){if(drag){ang+=(e.clientX-lx)*.01;lx=e.clientX}});
+['pointerup','pointercancel'].forEach(function(n){cvs.addEventListener(n,function(){drag=false;cvs.style.cursor='grab'})});
+if(R){draw()}else loop();
+})();
+</script>
+</body>
+</html>
